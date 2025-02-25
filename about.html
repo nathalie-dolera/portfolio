@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathalie Dolera</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Oranienbaum&display=swap">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        body {
+            background: url('background.gif') no-repeat center center/cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-family: 'Oranienbaum', serif;
+            font-weight: bold;
+            color: rgb(253, 203, 247);
+            margin-left: 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-family: 'Oranienbaum', serif;
+            color: rgb(253, 203, 247);
+            font-size: 18px;
+            padding: 8px 15px;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a.active::after,
+        .nav-links a:hover::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: rgb(191, 86, 232);
+            bottom: -3px;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .about-container {
+            width: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            color: white;
+            font-family: 'Domine';
+        }
+
+        .about-header {
+            font-size: 34px;
+            font-weight: bold;
+            color: rgb(253, 203, 247);
+            margin-bottom: 5px;
+            margin-left: 10px;
+        }
+
+        .about-box {
+            background: rgba(255, 255, 255, 0.11);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(253, 203, 247) !important;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            width: 100%;
+            border: none !important;
+        }
+
+        .about-box:hover,
+        .about-box:focus,
+        .about-box:active {
+            background: rgba(255, 255, 255, 0.3) !important;
+            color: rgb(253, 203, 247) !important;
+            box-shadow: none !important;
+        }
+
+        .about-content {
+            font-family: 'Domine';
+            text-align: justify;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.162);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: rgb(217, 217, 217);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="index.html">Nathalie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href=".">Tech Stack</a>
+                    <a href=".">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="about-container mt-5">
+        <div class="about-header">ABOUT ME</div>
+        
+        <button class="btn about-box" data-bs-toggle="collapse" data-bs-target="#whoIAm">
+            Who Am I?
+        </button>
+        <div id="whoIAm" class="collapse about-content">
+            I am a diligent and quick-learning second-year Information Technology student who is always eager to learn and fascinated by how technology evolves. 
+            I have a strong interest in web design and development. Outside of coding, I enjoy exploring graphic design to create visually appealing websites.
+        </div>
+        
+        <button class="btn about-box" data-bs-toggle="collapse" data-bs-target="#professionalAspiration">
+            Professional Aspiration
+        </button>
+        <div id="professionalAspiration" class="collapse about-content">
+            In the future, I aspire to become a skilled web developer and designer, creating intuitive and visually appealing websites that enhance user experience. 
+            I aim to blend my technical knowledge with creative design skills to develop responsive websites. As technology continues to evolve, I am committed to continuous learning, 
+            keeping up with emerging trends, and deepening my expertise in both coding and design.
+        </div>
+    </div>
+</body>
+</html>
