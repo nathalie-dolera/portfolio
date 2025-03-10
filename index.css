@@ -42,18 +42,21 @@ p {
 }
 
 .btn-custom {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border: none;
     padding: 12px 24px;
     font-family: 'Oranienbaum', serif;
-    border-radius: 20px;
+    border-radius: 25px;
     color: rgb(255, 227, 252);
     font-size: 18px;
     transition: 0.3s;
-    display: inline-block;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
 }
 
 .btn-custom:hover {
-    background: rgba(205, 87, 255, 0.4);
+    background: rgba(205, 87, 255, 0.5);
     color: rgb(255, 227, 252);
 }
