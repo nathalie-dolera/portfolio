@@ -72,6 +72,13 @@ p {
     gap: 14px; 
 }
 
-.background-col:hover{
-    transform: scale(1.1);
+.fullsize {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -55%) scale(0.9);
+    max-width: 90vw;
+    max-height: 90vh;
+    cursor: zoom-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }

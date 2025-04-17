@@ -36,13 +36,19 @@
                 <h1>CERTIFICATES</h1>
             <div class="col-md-3 background-col">
                 <p>Microsoft Office Specialist: Word (2019)</p>
-                <img src="images/word.jpeg" class="img-fluid">
+                <img src="images/word.jpeg" class="img-fluid" onclick="change(this)">
             </div>
             <div class="col-md-3 background-col">
                 <p>Microsoft Office Specialist: PowerPoint (2019)</p>
-                <img src="images/powerpoint.jpeg" class="img-fluid">
+                <img src="images/powerpoint.jpeg" class="img-fluid" onclick="change(this)">
             </div>
+    </div>        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script> 
+        function change(element){
+            element.classList.toggle("fullsize")
+        }
+    </script>
     
 </body>
 </html>
