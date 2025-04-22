@@ -2,10 +2,11 @@ body {
     background: url('background.gif') no-repeat center center/cover;
     min-height: 100vh;
     margin: 0;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .navbar {
@@ -16,6 +17,9 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
 }
 
 .navbar .logo {
@@ -49,20 +53,23 @@ body {
 }
 
 .about-container {
-    width: 80%;
+    width: 100%;
+    max-width: 1000px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 15px;
+    margin-top: 100px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
     font-family: 'Domine';
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .about-header {
     font-size: 34px;
     font-weight: bold;
-    color: rgb(253, 203, 247);
     margin-bottom: 5px;
     margin-left: 10px;
 }
@@ -79,6 +86,7 @@ body {
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
     width: 100%;
 }
+
 .about-box h3 {
     font-size: 24px;
     font-weight: bold;
@@ -91,9 +99,111 @@ body {
     font-family: 'Domine';
     text-align: justify;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.162);
     border-radius: 10px;
     margin-bottom: 10px;
     font-size: 18px;
     color: rgb(217, 217, 217);
+}
+
+@media (max-width: 320px) {
+  .navbar .logo {
+    font-size: 18px;
+  }
+    
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .about-container {
+    width: 90%;
+    z-index: 1;
+    padding-top: 60px;
+  }
+
+  .about-header {
+    font-size: 24px;
+  }
+
+  .about-box {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .about-box h3 {
+    font-size: 20px;
+  }
+
+  .about-content {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar .logo {
+    font-size: 20px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    padding: 7px 12px;
+  }
+
+  .about-container {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .about-header {
+    font-size: 28px;
+  }
+
+  .about-box {
+    font-size: 18px;
+    padding: 9px;
+  }
+
+  .about-box h3 {
+    font-size: 22px;
+  }
+
+  .about-content {
+    font-size: 16px;
+    padding: 9px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar .logo {
+    font-size: 24px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+
+  .about-container {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .about-header {
+    font-size: 34px;
+  }
+
+  .about-box {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .about-box h3 {
+    font-size: 24px;
+  }
+
+  .about-content {
+    font-size: 18px;
+    padding: 10px;
+  }
 }
