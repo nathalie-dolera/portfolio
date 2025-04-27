@@ -130,19 +130,14 @@ p {
 
     .fullsize {
         top: 53%;
-        transform: translate(-50%, -55%) scale(5.5);
-    }
-}
-
-@media (max-width: 768px) {
-    .fullsize {
         transform: translate(-50%, -55%) scale(3.5);
     }
 }
 
-@media (max-width: 325px) {
+@media (max-width: 320px) {
     .fullsize {
         transform: translate(-50%, -55%) scale(2.5);
     }
 }
+
 
