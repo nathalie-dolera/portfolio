@@ -4,8 +4,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding-top: 78px; 
 }
 
 .navbar {
@@ -16,11 +15,12 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 0; 
 }
 
 .navbar .logo {
     font-size: 24px;
-    font-family: 'Oranienbaum';
+    font-family: 'Oranienbaum', sans-serif;
     font-weight: bold;
     color: rgb(253, 203, 247);
     margin-left: 10px;
@@ -28,7 +28,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    font-family: 'Oranienbaum';
+    font-family: 'Oranienbaum', sans-serif; 
     color: rgb(253, 203, 247);
     font-size: 18px;
     padding: 8px 15px;
@@ -50,35 +50,99 @@ body {
 
 h1 {
     color: rgb(253, 203, 247);
-    font-family: 'Oranienbaum';
+    font-family: 'Oranienbaum', serif;
     font-weight: bold;
-    
 }
 
 p {
     color: rgb(253, 203, 247);
-    font-family: 'Domine';
+    font-family: 'Domine', serif;
 }
 
 .background-col {
     background: rgba(255, 255, 255, 0.11);
-    border: 10px;
+    border: 100px;
+    width: 400px;
     border-radius: 10px;
-    padding: 15px; 
+    padding: 10px;
 }
 
 .row {
     display: flex;
-    gap: 14px; 
+    gap: 10px;
 }
 
 .fullsize {
     position: fixed;
-    top: 60%;
+    top: 48%;
     left: 50%;
-    transform: translate(-50%, -55%) scale(0.9);
+    transform: translate(-50%, -55%) scale(4.5);
     max-width: 90vw;
     max-height: 90vh;
     cursor: zoom-out;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+.container-glass {
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 60px auto;
+}
+
+.background-col img {
+    max-height: 90px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .container-glass {
+        margin: 10px 20px;
+        padding: 30px;
+    }
+
+    .row {
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px;
+    }
+
+    .fullsize {
+        transform: translate(-50%, -55%) scale(3);
+    }
+
+    .background-col img {
+        max-height: 80px;
+    }
+
+    .fullsize {
+        top: 53%;
+        transform: translate(-50%, -55%) scale(5.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .fullsize {
+        transform: translate(-50%, -55%) scale(3.5);
+    }
+}
+
+@media (max-width: 325px) {
+    .fullsize {
+        transform: translate(-50%, -55%) scale(2.5);
+    }
+}
+
