@@ -223,3 +223,39 @@ p {
         gap: 8px;
     }
   }
+
+  @media (max-width: 575.98px) {
+    .navbar .logo {
+      font-size: 20px;
+    }
+  
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  
+    }
+  
+    .nav-links a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #fdd3f91e;
+      text-decoration: none;
+      color: rgb(253, 203, 247);
+    }
+  
+    .nav-links a:last-child {
+      border-bottom: none; 
+    }
+  
+    .nav-links a.active {
+      border-bottom: none !important;
+      color: rgb(254, 184, 247);
+  
+    }
+  }  
+
+  
