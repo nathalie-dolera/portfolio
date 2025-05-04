@@ -74,9 +74,9 @@ p {
 
 .fullsize {
     position: fixed;
-    top: 55%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -55%) scale(4.5);
+    transform: translate(-50%, -55%) scale(2.5);
     max-width: 90vw;
     max-height: 90vh;
     cursor: zoom-out;
@@ -94,7 +94,7 @@ p {
 }
 
 .background-col img {
-    max-height: 90px;
+    max-height: 200px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -129,7 +129,7 @@ p {
     }
 
     .fullsize {
-        top: 53%;
+        top: 55%;
         transform: translate(-50%, -55%) scale(3.5);
     }
 }
