@@ -17,8 +17,8 @@
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #65477e;
-    padding-top: 40px;
-    padding-bottom: 70px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     flex-direction: column;
   }
   
@@ -108,7 +108,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -55%) scale(2.5);
+    transform: translate(-50%, -55%) scale(2.3);
     max-width: 90vw;
     max-height: 90vh;
     cursor: zoom-out;
