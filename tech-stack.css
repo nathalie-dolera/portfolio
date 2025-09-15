@@ -91,6 +91,13 @@ p {
     border-radius: 15px;
     transition: transform 0.3s ease;
     margin: 7px;
+    width: 190px;     
+    height: 185px;     
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .background-col:hover {
@@ -105,7 +112,10 @@ p {
 }
 
 .background-col img {
-    max-height: 90px;
+    max-width: 80px;  
+    max-height: 80px;
+    width: auto;
+    height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
 }
