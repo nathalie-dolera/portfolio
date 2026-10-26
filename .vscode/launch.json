@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome (Localhost 8080)",
+            "url": "http://localhost:8080/certificates.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open Current HTML File Directly",
+            "file": "${file}"
+        }
+    ]
+}

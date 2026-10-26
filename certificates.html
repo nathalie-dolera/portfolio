@@ -31,18 +31,260 @@
         </div> 
     </nav>
 
-    <div class="container-glass pt-5 mt-5">
-        <div class="row justify-content-center text-center">
-            <h1>CERTIFICATES</h1>
-            <div class="col-md-3 background-col">
-                <p>Microsoft Office Specialist: Word (2019)</p>
-                <img src="images/word.png" class="img-fluid zoomable" onclick="change(this)" alt="Word Certificate">
+    <div class="container-glass py-5 mt-5">
+        <!-- SECTION 1: CERTIFICATES PASSED -->
+        <section class="cert-category-section mb-5">
+            <div class="category-header text-center mb-4">
+                <h2 class="section-title">Certificates Passed</h2>
+                <p class="section-subtitle">Official examinations and industry certifications successfully completed and accredited</p>
             </div>
-            <div class="col-md-3 background-col">
-                <p>Microsoft Office Specialist: PowerPoint (2019)</p>
-                <img src="images/powerpoint.png" class="img-fluid zoomable" onclick="change(this)" alt="PowerPoint Certificate">
+
+            <div class="row g-4 justify-content-center">
+                <!-- Word 2019 -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/word.png', 'Microsoft Office Specialist: Word (2019)')">
+                            <img src="images/word.png" class="img-fluid cert-img zoomable" alt="Microsoft Office Specialist: Word (2019)">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Microsoft Office Specialist: Word (2019)</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Microsoft & Certiport</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">March 13, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PowerPoint 2019 -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/powerpoint.png', 'Microsoft Office Specialist: PowerPoint (2019)')">
+                            <img src="images/powerpoint.png" class="img-fluid cert-img zoomable" alt="Microsoft Office Specialist: PowerPoint (2019)">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Microsoft Office Specialist: PowerPoint (2019)</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Microsoft & Certiport</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">May 30, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/cybersecurity.png', 'Information Technology Specialist: Cybersecurity')">
+                            <img src="images/cybersecurity.png" class="img-fluid cert-img zoomable" alt="Information Technology Specialist: Cybersecurity">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">IT Specialist: Cybersecurity</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Certiport & Pearson VUE</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">June 3, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML and CSS -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/html and css.png', 'Information Technology Specialist: HTML and CSS')">
+                            <img src="images/html and css.png" class="img-fluid cert-img zoomable" alt="Information Technology Specialist: HTML and CSS">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">IT Specialist: HTML and CSS</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Certiport & Pearson VUE</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">February 4, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>        
+        </section>
+
+        <!-- SECTION 2: COURSES CERTIFICATE LEARNING -->
+        <section class="cert-category-section mt-5 pt-2">
+            <div class="category-header text-center mb-4">
+                <h2 class="section-title">Courses Certificate Learning</h2>
+                <p class="section-subtitle">Specialized training programs, technical courses, and skill-building modules completed</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Ethical Hacker -->
+                <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/hacker.png', 'Ethical Hacker')">
+                            <img src="images/hacker.png" class="img-fluid cert-img zoomable" alt="Ethical Hacker Certificate">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Ethical Hacker</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Cisco Networking Academy (SDCA)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">May 24, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Introduction to Cybersecurity -->
+                <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/intro.png', 'Introduction to Cybersecurity')">
+                            <img src="images/intro.png" class="img-fluid cert-img zoomable" alt="Introduction to Cybersecurity Certificate">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Introduction to Cybersecurity</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Cisco Networking Academy (SDCA)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">September 26, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Introduction to IoT and Digital Transformation -->
+                <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/iot.png', 'Introduction to IoT and Digital Transformation')">
+                            <img src="images/iot.png" class="img-fluid cert-img zoomable" alt="Introduction to IoT and Digital Transformation Certificate">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Introduction to IoT and Digital Transformation</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Cisco Networking Academy (SDCA)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">February 12, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Getting Started with Cisco Packet Tracer -->
+                <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/cisco.png', 'Getting Started with Cisco Packet Tracer')">
+                            <img src="images/cisco.png" class="img-fluid cert-img zoomable" alt="Getting Started with Cisco Packet Tracer Certificate">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Getting Started with Cisco Packet Tracer</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">Cisco Networking Academy (SDCA)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">February 5, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cyber Hygiene Training -->
+                <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/hygiene.png', 'Cyber Hygiene Training')">
+                            <img src="images/hygiene.png" class="img-fluid cert-img zoomable" alt="Cyber Hygiene Training Certificate">
+                            <div class="cert-overlay">
+                                <span class="overlay-text">🔍 Click to View</span>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Cyber Hygiene Training</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Platform / Provider:</span>
+                                    <span class="meta-val">The Asia Foundation & YGoal (Google.org)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Completion Date:</span>
+                                    <span class="meta-val">October 27, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="certLightbox" class="cert-lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+            <img id="lightboxImage" src="" alt="Certificate Full Preview" class="lightbox-img">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
     </div>
 
     <div id="particles-js"></div>
@@ -51,8 +293,35 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script> 
+        function openLightbox(src, title) {
+            const lightbox = document.getElementById("certLightbox");
+            const img = document.getElementById("lightboxImage");
+            const caption = document.getElementById("lightboxCaption");
+            
+            img.src = src;
+            img.alt = title;
+            caption.textContent = title;
+            
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox(event) {
+            const lightbox = document.getElementById("certLightbox");
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeLightbox();
+            }
+        });
+
         function change(element) {
-            element.classList.toggle("fullsize");
+            if (element && element.src) {
+                openLightbox(element.src, element.alt || "Certificate Preview");
+            }
         }
     </script>
 </body>
