@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Oranienbaum&display=swap">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="certificates.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="certificates.css?v=7">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -32,9 +33,21 @@
         </div> 
     </nav>
 
-    <div class="container-glass py-5 mt-5">
+    <!-- CERTIFICATE TAB ATTACHED TO TOP-RIGHT OF CONTAINER -->
+    <div class="cert-tab-wrapper mt-5 pt-3">
+        <div class="cert-tab-bar">
+            <div class="cert-folder-tab">
+                <button class="cert-filter-btn active" onclick="filterCertificates('all', this)">All</button>
+                <button class="cert-filter-btn" onclick="filterCertificates('exam-passed', this)">Exam Passed</button>
+                <button class="cert-filter-btn" onclick="filterCertificates('completed-learning', this)">Completed Learning</button>
+                <button class="cert-filter-btn" onclick="filterCertificates('achievements', this)">Other Achievements</button>
+            </div>
+        </div>
+
+        <div class="container-glass pt-5 pb-5">
+
         <!-- SECTION 1: CERTIFICATES PASSED -->
-        <section class="cert-category-section mb-5">
+        <section class="cert-category-section mb-5" data-category="exam-passed">
             <div class="category-header text-center mb-4">
                 <h2 class="section-title">Certificates Passed</h2>
                 <p class="section-subtitle">Official examinations and industry certifications successfully completed and accredited</p>
@@ -132,7 +145,7 @@
         </section>
 
         <!-- SECTION 2: COURSES CERTIFICATE LEARNING -->
-        <section class="cert-category-section mt-5 pt-2">
+        <section class="cert-category-section mt-5 pt-2" data-category="completed-learning">
             <div class="category-header text-center mb-4">
                 <h2 class="section-title">Courses Certificate Learning</h2>
                 <p class="section-subtitle">Specialized training programs, technical courses, and skill-building modules completed</p>
@@ -250,7 +263,91 @@
                 </div>
             </div>
         </section>
-    </div>
+
+        <!-- SECTION 3: OTHER ACHIEVEMENTS -->
+        <section class="cert-category-section mt-5 pt-2" data-category="achievements">
+            <div class="category-header text-center mb-4">
+                <h2 class="section-title">Other Achievements</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- 1. DBP RISE Scholarship -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/dbp.png', 'DBP (Development Bank of the Philippines) Scholar')">
+                            <img src="images/dbp.png" class="img-fluid cert-img zoomable" alt="DBP RISE Scholarship MOA Signing Ceremony">
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">DBP (Development Bank of the Philippines) Scholar</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Duration:</span>
+                                    <span class="meta-val">1st Year – 4th Year</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Dean's Lister Awards (4 Photos in 1 Container with Circles & Swipe) -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container cert-slider-container" id="dlSlider">
+                            <div class="cert-slider-track">
+                                <img src="images/dl1.jpg" class="img-fluid cert-img cert-slide active zoomable" alt="Dean's Lister — 1st Sem A.Y. 2023–2024" onclick="openDlLightbox(0)">
+                                <img src="images/dl2.png" class="img-fluid cert-img cert-slide zoomable" alt="Dean's Lister — 2nd Sem A.Y. 2023–2024" onclick="openDlLightbox(1)">
+                                <img src="images/dl3.png" class="img-fluid cert-img cert-slide zoomable" alt="Dean's Lister — 1st Sem A.Y. 2025–2026" onclick="openDlLightbox(2)">
+                                <img src="images/dl4.png" class="img-fluid cert-img cert-slide zoomable" alt="Dean's Lister — 2nd Sem A.Y. 2024–2025" onclick="openDlLightbox(3)">
+                            </div>
+                            <!-- Previous / Next Arrows -->
+                            <button class="slide-nav-btn prev-btn" onclick="event.stopPropagation(); changeDlSlide(-1)" aria-label="Previous Photo">&#10094;</button>
+                            <button class="slide-nav-btn next-btn" onclick="event.stopPropagation(); changeDlSlide(1)" aria-label="Next Photo">&#10095;</button>
+                            <!-- 4 Circle Indicators -->
+                            <div class="slider-dots" onclick="event.stopPropagation()">
+                                <button class="dot-btn active" onclick="setDlSlide(0)" title="1st Sem A.Y. 2023–2024" aria-label="Photo 1"></button>
+                                <button class="dot-btn" onclick="setDlSlide(1)" title="2nd Sem A.Y. 2023–2024" aria-label="Photo 2"></button>
+                                <button class="dot-btn" onclick="setDlSlide(2)" title="1st Sem A.Y. 2025–2026" aria-label="Photo 3"></button>
+                                <button class="dot-btn" onclick="setDlSlide(3)" title="2nd Sem A.Y. 2024–2025" aria-label="Photo 4"></button>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Dean's Lister Award</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Institution:</span>
+                                    <span class="meta-val">St. Dominic College of Asia</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Semester:</span>
+                                    <span class="meta-val" id="dlSemesterLabel">1st Semester A.Y. 2023–2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Student Excellence Award (Highest in Course) -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                    <div class="cert-card w-100">
+                        <div class="cert-img-container" onclick="openLightbox('images/course.png', 'Student Excellence Award — Highest Grade in Adv. Data Comm. & Networking')">
+                            <img src="images/course.png" class="img-fluid cert-img zoomable" alt="Student Excellence Award — Advance Data Communication & Networking">
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Student Excellence Award</h3>
+                            <div class="cert-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Achievement:</span>
+                                    <span class="meta-val">Highest Grade in Adv. Data Comm. & Networking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        </div> <!-- Closing container-glass -->
+    </div> <!-- Closing cert-tab-wrapper -->
 
     <!-- Certificate Lightbox Modal -->
     <div id="certLightbox" class="cert-lightbox" onclick="closeLightbox(event)">
@@ -296,6 +393,81 @@
             if (element && element.src) {
                 openLightbox(element.src, element.alt || "Certificate Preview");
             }
+        }
+
+        function filterCertificates(category, btnElement) {
+            document.querySelectorAll('.cert-filter-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+
+            const sections = document.querySelectorAll('.cert-category-section');
+            sections.forEach(section => {
+                const cat = section.getAttribute('data-category');
+                if (category === 'all' || cat === category) {
+                    section.style.display = 'block';
+                    section.classList.add('fade-in-section');
+                } else {
+                    section.style.display = 'none';
+                    section.classList.remove('fade-in-section');
+                }
+            });
+        }
+
+        // DEAN'S LISTER SLIDER LOGIC (4 Photos)
+        const dlImages = [
+            { src: 'images/dl1.jpg', title: "Dean's Lister — 1st Semester A.Y. 2023–2024 (St. Dominic College of Asia)", label: "1st Semester A.Y. 2023–2024" },
+            { src: 'images/dl2.png', title: "Dean's Lister — 2nd Semester A.Y. 2023–2024 (St. Dominic College of Asia)", label: "2nd Semester A.Y. 2023–2024" },
+            { src: 'images/dl3.png', title: "Dean's Lister — 1st Semester A.Y. 2025–2026 (St. Dominic College of Asia)", label: "1st Semester A.Y. 2025–2026" },
+            { src: 'images/dl4.png', title: "Dean's Lister — 2nd Semester A.Y. 2024–2025 (St. Dominic College of Asia)", label: "2nd Semester A.Y. 2024–2025" }
+        ];
+        let currentDlIndex = 0;
+
+        function setDlSlide(index) {
+            currentDlIndex = index;
+            updateDlSlider();
+        }
+
+        function changeDlSlide(direction) {
+            currentDlIndex = (currentDlIndex + direction + dlImages.length) % dlImages.length;
+            updateDlSlider();
+        }
+
+        function updateDlSlider() {
+            const slides = document.querySelectorAll('.cert-slide');
+            const dots = document.querySelectorAll('.dot-btn');
+            const label = document.getElementById('dlSemesterLabel');
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('active', idx === currentDlIndex);
+            });
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentDlIndex);
+            });
+            if (label) {
+                label.textContent = dlImages[currentDlIndex].label;
+            }
+        }
+
+        function openDlLightbox(index) {
+            const item = dlImages[index !== undefined ? index : currentDlIndex];
+            openLightbox(item.src, item.title);
+        }
+
+        // Touch swipe support for DL slider
+        const dlSliderElem = document.getElementById('dlSlider');
+        if (dlSliderElem) {
+            let touchStartX = 0;
+            dlSliderElem.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            dlSliderElem.addEventListener('touchend', e => {
+                let touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 35) {
+                    changeDlSlide(1);
+                } else if (touchEndX - touchStartX > 35) {
+                    changeDlSlide(-1);
+                }
+            }, { passive: true });
         }
     </script>
 </body>

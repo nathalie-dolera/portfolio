@@ -70,18 +70,64 @@ body {
     transition: width 0.3s ease-in-out;
 }
 
-/* CONTAINER GLASS */
-.container-glass {
+/* CONTAINER GLASS & TAB WRAPPER */
+.cert-tab-wrapper {
     width: 92%;
     max-width: 1200px;
+    margin: 20px auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cert-tab-bar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 5;
+}
+
+.cert-folder-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px 22px 0 0;
+    padding: 8px 14px 10px 14px;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Inverted smooth curve on the left side of the tab connecting to the card */
+.cert-folder-tab::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: -20px;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.container-glass {
+    width: 100%;
+    max-width: 100%;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 40px 30px;
-    border-radius: 25px;
+    border-radius: 25px 0 25px 25px; /* right-top merges with tab */
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    margin: 20px auto 40px auto;
+    margin: 0;
 }
 
 /* SECTION TITLES & SUBTITLES */
@@ -328,6 +374,166 @@ body {
     border-radius: 10px;
 }
 
+/* DEAN'S LISTER SLIDER */
+.cert-slider-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cert-slider-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cert-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transform: scale(0.98);
+}
+
+.cert-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    position: relative;
+}
+
+/* 4 Indicator Dots / Circles */
+.slider-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 4px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dot-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(253, 203, 247, 0.7);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.dot-btn:hover {
+    background: rgba(253, 203, 247, 0.4);
+    box-shadow: none !important;
+}
+
+.dot-btn.active {
+    background: rgb(253, 203, 247);
+    border-color: rgb(253, 203, 247);
+    box-shadow: none !important;
+    width: 10px;
+    height: 10px;
+}
+
+/* Slider Nav Arrows */
+.slide-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.55);
+    color: rgb(253, 203, 247);
+    border: 1px solid rgba(253, 203, 247, 0.3);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.cert-slider-container:hover .slide-nav-btn {
+    opacity: 1;
+}
+
+.slide-nav-btn:hover {
+    background: rgba(205, 87, 255, 0.75);
+    color: #ffffff;
+    border-color: rgba(253, 203, 247, 0.8);
+}
+
+.prev-btn {
+    left: 8px;
+}
+
+.next-btn {
+    right: 8px;
+}
+
+.cert-filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none !important;
+    outline: none !important;
+    padding: 8px 20px;
+    font-family: 'Oranienbaum', serif;
+    border-radius: 25px;
+    color: rgb(255, 227, 252);
+    font-size: 16px;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    white-space: nowrap;
+}
+
+.cert-filter-btn:hover {
+    background: rgba(205, 87, 255, 0.5);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(205, 87, 255, 0.35);
+}
+
+.cert-filter-btn.active {
+    background: rgba(205, 87, 255, 0.65);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(205, 87, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+.cert-filter-btn:focus,
+.cert-filter-btn:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(205, 87, 255, 0.4);
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 991px) {
     .container-glass {
@@ -346,6 +552,128 @@ body {
 
     .cert-img-container {
         height: 160px;
+    }
+}
+
+/* ACHIEVEMENT CARD */
+.achievement-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(253, 203, 247, 0.25);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    border-color: rgba(253, 203, 247, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.achievement-img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.achievement-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.achievement-img-container:hover img {
+    transform: scale(1.05);
+}
+
+.achievement-content {
+    padding: 20px;
+}
+
+.achievement-icon {
+    font-size: 28px;
+    color: rgb(253, 203, 247);
+    filter: drop-shadow(0 2px 8px rgba(191, 86, 232, 0.4));
+    margin-right: 10px;
+}
+
+.achievement-title {
+    font-family: 'Oranienbaum', serif;
+    color: rgb(253, 203, 247);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.achievement-meta {
+    margin-bottom: 10px;
+}
+
+.achievement-meta .meta-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+    font-family: 'Domine', serif;
+    font-size: 13px;
+}
+
+.achievement-meta .meta-label {
+    color: rgba(253, 203, 247, 0.7);
+    white-space: nowrap;
+}
+
+.achievement-meta .meta-val {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.achievement-text {
+    font-family: 'Domine', serif;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* OLD PLACEHOLDER (kept for backward compat) */
+.achievement-placeholder-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px dashed rgba(253, 203, 247, 0.4);
+    border-radius: 20px;
+    padding: 35px 25px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.achievement-placeholder-card:hover {
+    border-color: rgba(253, 203, 247, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+}
+
+.fade-in-section {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -381,9 +709,30 @@ body {
         color: rgb(254, 184, 247);
     }
 
-    .container-glass {
+    .cert-tab-wrapper {
         width: 95%;
         margin: 15px auto;
+    }
+
+    .cert-tab-bar {
+        justify-content: center;
+    }
+
+    .cert-folder-tab {
+        border-radius: 20px 20px 0 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 8px 6px;
+    }
+
+    .cert-folder-tab::before {
+        display: none;
+    }
+
+    .container-glass {
+        border-radius: 0 0 20px 20px;
         padding: 25px 15px;
     }
 
@@ -392,7 +741,12 @@ body {
         margin-bottom: 16px;
     }
 
-    .cert-img-container {
+    .cert-filter-btn {
+        padding: 7px 14px;
+        font-size: 13.5px;
+    }
+
+    .achievement-img-container {
         height: 180px;
     }
 }
@@ -416,5 +770,24 @@ body {
         width: 32px;
         height: 32px;
         font-size: 20px;
+    }
+
+    .cert-filter-bar {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .cert-filter-container {
+        gap: 6px;
+        padding: 4px;
+    }
+
+    .cert-filter-btn {
+        padding: 6px 12px;
+        font-size: 12.5px;
+    }
+
+    .achievement-img-container {
+        height: 160px;
     }
 }
