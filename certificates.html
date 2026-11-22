@@ -271,11 +271,22 @@
             </div>
 
             <div class="row g-4 justify-content-center">
-                <!-- 1. DBP RISE Scholarship -->
+                <!-- 1. DBP RISE Scholarship (2 Photos: Ceremony & Invitation with Slider) -->
                 <div class="col-12 col-md-6 col-lg-4 d-flex">
                     <div class="cert-card w-100">
-                        <div class="cert-img-container" onclick="openLightbox('images/dbp.png', 'DBP (Development Bank of the Philippines) Scholar')">
-                            <img src="images/dbp.png" class="img-fluid cert-img zoomable" alt="DBP RISE Scholarship MOA Signing Ceremony">
+                        <div class="cert-img-container cert-slider-container" id="dbpSlider">
+                            <div class="cert-slider-track">
+                                <img src="images/dbp.png" class="img-fluid cert-img cert-slide active zoomable" alt="DBP RISE Scholarship MOA Signing Ceremony" onclick="openDbpLightbox(0)">
+                                <img src="images/dbp invitation.png" class="img-fluid cert-img cert-slide zoomable" alt="DBP Scholarship Invitation" onclick="openDbpLightbox(1)">
+                            </div>
+                            <!-- Previous / Next Arrows -->
+                            <button class="slide-nav-btn prev-btn" onclick="event.stopPropagation(); changeDbpSlide(-1)" aria-label="Previous Photo">&#10094;</button>
+                            <button class="slide-nav-btn next-btn" onclick="event.stopPropagation(); changeDbpSlide(1)" aria-label="Next Photo">&#10095;</button>
+                            <!-- 2 Circle Indicators -->
+                            <div class="slider-dots" onclick="event.stopPropagation()">
+                                <button class="dot-btn active" onclick="setDbpSlide(0)" title="Scholarship Ceremony" aria-label="Photo 1"></button>
+                                <button class="dot-btn" onclick="setDbpSlide(1)" title="DBP Invitation" aria-label="Photo 2"></button>
+                            </div>
                         </div>
                         <div class="cert-content">
                             <h3 class="cert-title">DBP (Development Bank of the Philippines) Scholar</h3>
@@ -283,6 +294,10 @@
                                 <div class="meta-row">
                                     <span class="meta-label">Duration:</span>
                                     <span class="meta-val">1st Year – 4th Year</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Document:</span>
+                                    <span class="meta-val" id="dbpDocLabel">Scholarship Ceremony</span>
                                 </div>
                             </div>
                         </div>
@@ -414,6 +429,60 @@
             });
         }
 
+        // DBP SCHOLAR SLIDER LOGIC (2 Photos: Ceremony & Invitation)
+        const dbpImages = [
+            { src: 'images/dbp.png', title: "DBP (Development Bank of the Philippines) Scholar — MOA Signing Ceremony", label: "Scholarship Ceremony" },
+            { src: 'images/dbp invitation.png', title: "DBP (Development Bank of the Philippines) Scholar — Invitation", label: "Invitation" }
+        ];
+        let currentDbpIndex = 0;
+
+        function setDbpSlide(index) {
+            currentDbpIndex = index;
+            updateDbpSlider();
+        }
+
+        function changeDbpSlide(direction) {
+            currentDbpIndex = (currentDbpIndex + direction + dbpImages.length) % dbpImages.length;
+            updateDbpSlider();
+        }
+
+        function updateDbpSlider() {
+            const slides = document.querySelectorAll('#dbpSlider .cert-slide');
+            const dots = document.querySelectorAll('#dbpSlider .dot-btn');
+            const label = document.getElementById('dbpDocLabel');
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('active', idx === currentDbpIndex);
+            });
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentDbpIndex);
+            });
+            if (label) {
+                label.textContent = dbpImages[currentDbpIndex].label;
+            }
+        }
+
+        function openDbpLightbox(index) {
+            const item = dbpImages[index !== undefined ? index : currentDbpIndex];
+            openLightbox(item.src, item.title);
+        }
+
+        // Touch swipe support for DBP slider
+        const dbpSliderElem = document.getElementById('dbpSlider');
+        if (dbpSliderElem) {
+            let touchStartX = 0;
+            dbpSliderElem.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            dbpSliderElem.addEventListener('touchend', e => {
+                let touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 35) {
+                    changeDbpSlide(1);
+                } else if (touchEndX - touchStartX > 35) {
+                    changeDbpSlide(-1);
+                }
+            }, { passive: true });
+        }
+
         // DEAN'S LISTER SLIDER LOGIC (4 Photos)
         const dlImages = [
             { src: 'images/dl1.jpg', title: "Dean's Lister — 1st Semester A.Y. 2023–2024 (St. Dominic College of Asia)", label: "1st Semester A.Y. 2023–2024" },
@@ -434,8 +503,8 @@
         }
 
         function updateDlSlider() {
-            const slides = document.querySelectorAll('.cert-slide');
-            const dots = document.querySelectorAll('.dot-btn');
+            const slides = document.querySelectorAll('#dlSlider .cert-slide');
+            const dots = document.querySelectorAll('#dlSlider .dot-btn');
             const label = document.getElementById('dlSemesterLabel');
             slides.forEach((slide, idx) => {
                 slide.classList.toggle('active', idx === currentDlIndex);
